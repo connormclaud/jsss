@@ -1,28 +1,36 @@
 <!-- This file is an example to show how easily the scramble plugins from Mark 2 can be used on any website. -->
 <html>
-<head>
+  <head>
 	<title>Scramble Usage Example</title>
 
 	<!-- Raphael.js is used for drawing the scrambles. You can leave it out if you don't use the drawing code. -->
-	<script src="./lib/raphael-min.js"></script>
+    <script src="./lib/raphael-min.js"></script>
 
-	<!-- Include the files for the puzzles you want. -->
-	<script src="scramble_333.js"></script>
-</head>
-<body>
-	<script>
+    <!-- Include the files for the puzzles you want. -->
+    <script src="scramble_333.js"></script>
+  </head>
+  <body>
+    <button accesskey="r" onclick="renewScramble()" style="font-size: 100%">Generate new scrambles</button>
+    <p id="sample"></p>
 
-		// Tell the scrambler to initialize its tables.
-		scramblers["333"].initialize();
+    <script>
 
-		for (var i=1; i <= 5; i++) {
+// Tell the scrambler to initialize its tables.
+function renewScramble() {
+    scramblers["333"].initialize();
+    var scr = document.getElementById('sample');
+    scr.innerHTML = 'tutu';
+    for (var i=1; i <= 5; i++) {
 
-			// Generate a random scramble
-			var randomScramble = scramblers["333"].getRandomScramble();
+        // Generate a random scramble
+        var randomScramble = scramblers["333"].getRandomScramble();
 
-			// Print it
-			document.write("<h1>" + i + ". <b>" + randomScramble.scramble_string + "</b></h1> <br>");
-		}
-	</script>
-</body>
+        // Print it
+        scr.innerHTML += "<h1>" + i + ". <b>" + randomScramble.scramble_string + "</b></h1> <br>";
+    }
+}
+
+                       </script>
+
+  </body>
 </html>
