@@ -1,5 +1,7 @@
 # Javascript Solver/Scrambler Suite
 
+https://connormclaud.github.io/jsss/
+
 This directory contains several scramblers used for Mark 2 that can be used in any Javascript project.
 
 ## Example Usage
